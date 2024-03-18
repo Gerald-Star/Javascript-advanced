@@ -109,8 +109,69 @@ if (workshopEnrollment1) < (workshopEnrollment2) {
 }
 */
 
-// ? A quality JS Program embraces coercions, making sure the types involved 
+// ? A quality JS Program embraces coercions, making sure the types involved
 // ? in every operations are clear.
 
+/* 
+Loose Equality vs Strict Equality
+
+== checks value (loose)
+! allows coercion (types different)
+
+=== checks value and type (strict)
+! disallows coercion (types same)
+
+! When the types are the same, the double equal == and the triple equal === do exactly the same thing.
+
+*/
+
+// ? Example Coercive Equality : == and ===
+
+var studentName1 = 'Frank';
+var studentName2 = `${studentsName1}`;
+
+var workshopEnrollment1 = 16;
+var workshopEnrollment2 = workshopEnrollment1 + 0;
+
+studentName1 == studentName2; // true
+studentName1 === studentName2; // true
+
+workshopEnrollment1 == workshopEnrollment2; // true
+workshopEnrollment1 === workshopEnrollment2; // true
 
 
+//? Coercive Equality: null == undefined
+var workshop1 = { topic: null };
+var workshop = {};
+
+if (
+  (workshop1.topic === null || workshop1.topic === undefined) &&
+  (workshop2.topic === null || workshop2.topic === undefined) &&
+) {
+  //..
+}
+
+// ? this is better and 
+if (
+  workshop1.topic == null &&
+  workshop12.topic == null
+) {
+
+}
+
+
+// Coercion Best Practices
+/*
+! == is not about comparisons with unknown types
+! == is about comparisons with known types(s). optionally where conversions are helpful
+*/
+
+
+// ? Javascript Dynamic Type system 
+/*
+Javascript dynamic type system uses various form of coercion for value system conversion
+including equality comparisons
+
+! Yu simply cannot write quality programs without knowing the types involved in your operations.
+
+*/

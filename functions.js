@@ -1,5 +1,102 @@
 //Functions
-//Usage of balticks for interporlated strings
+
+
+
+
+// ? Function Expressions
+/*
+Function expressions are values that can be assigned as variables elsewhere. 
+The can be pass as an arguement to other functions, or returned from functions-
+-We call it a first class value - eg string
+*/
+
+//? Examples of function Expressions
+
+// ! Annonymous handler
+var clickHandler = function () {
+
+};
+
+//! Named Function Expressions
+var keyHandler = function keyHandler() {
+
+}
+/*
+Why Named function expression is preferred is because their descriptive name
+tells you what they are doing.
+*/
+
+// ? Example Function Expression IIFE
+
+var teacher = "Kyle";
+(function anotherTeacher() {
+  var teacher = "Suzzy";
+  console.log(teacher);
+})(); // ()this is where it is executed
+console.log(teacher);
+
+
+//? Instead of IIFE, we use block scope : encapsulation
+/*
+we switch from using a var to let keyword
+The let keyword will help create a variable inside a curly lace block
+Helps variable ti be nicely collected together
+*/
+
+var chef = "Andy";
+{
+  let chef = "Ofi"
+  console.log(chef)
+}
+
+console.log(teacher)
+
+// ! Block let
+
+function diff(x, y) {
+  if (x > y) {
+    let temp = x;
+    x = y;
+    y = temp;
+  }
+  return y - x;
+}
+
+
+//Closure
+/*
+Closure is when a function 'remembers' the variables outside of it, even if you pass
+that function elsewhere.
+*/
+
+// ! set time out
+
+function ask(question) {
+  setTimeout(function waitASec() {
+    console.log(question);
+  }, 100);
+}
+
+ask('What is closure')
+
+// Another example is reassign the function as a value
+
+function yourQuestion(mention) {
+  return function askYourQuestion() {
+    console.log(mention)
+  };
+}
+
+var myQuestion = yourQuestion('What is block scope?');
+
+myQuestion()
+// ? Example of Function Expression - Arrow Function
+
+
+
+
+
+//Usage of batiks for interpolated strings
 //What is a Function
 //Calling a function
 
